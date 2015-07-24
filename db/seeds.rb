@@ -32,7 +32,17 @@ end
 	)
 end
 
+#Create Advertisement
+1.times do
+	Advertisement.create!(
+		title: "Unique Advertisement",
+		copy:  "I am a unique advertisment. Buy stuff.",
+		price: "1"
+	)
+end
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+	
 	
