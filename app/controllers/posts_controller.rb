@@ -22,17 +22,14 @@ class PostsController < ApplicationController
       end
   end
 
-<<<<<<< HEAD
   def edit
     @post = Post.find(params[:id])
   end
   
-=======
    def edit
      @post = Post.find(params[:id])
    end
 
->>>>>>> question_resource
    def update
      @post = Post.find(params[:id])
      if @post.update_attributes(params.require(:post).permit(:title, :body))
