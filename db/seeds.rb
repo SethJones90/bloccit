@@ -65,7 +65,7 @@ member = User.new(
   name:       'Member User',
   email:      'member@example.com',
   password:   'helloworld',
-  role:       'admin'
+  role:       'member'
 )
 member.skip_confirmation!
 member.save!
