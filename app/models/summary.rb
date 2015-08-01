@@ -1,3 +1,3 @@
 class Summary < ActiveRecord::Base
-  has_one :summary
+  has_one :post
 end
