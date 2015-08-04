@@ -1,9 +1,8 @@
-<div style="postion:relative; width:400px;">
-<p><%= comment.body %></p>
-
-<% if comment.user %>
-<small>
-<p><%= comment.user.name %></p>
-</small>
-<% end %>
-</div>
+<p>
+  <%= comment.body %></br>
+  <% if comment.user %>
+    <small>
+      <em><%= comment.user.name %></em>
+    </small>
+  <% end %>
+</p>

@@ -18,12 +18,10 @@
     <% end %>
   </div>
 
-<div class="row">
+<div class="col-md-8">
   <h2>Comments</h2>
-  <div class='col-md-12'>
+  <div class='media-body'>
     <%= render @comments %>
-
-
     <% if policy(@comment).create? %> 
       <h4>Add a comment</h4>
       <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
