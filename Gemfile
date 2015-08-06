@@ -20,6 +20,10 @@ gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
  group :production do
    gem 'pg'
    gem 'rails_12factor'
