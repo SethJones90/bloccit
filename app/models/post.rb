@@ -42,7 +42,13 @@ class Post < ActiveRecord::Base
     update_attribute(:rank, new_rank)
   end
 
+  after_create :create_vote
+
   private 
+
+  def create_vote
+    user.votes.create(value: 1, post: self)
+  end
 
   def render_as_markdown(markdown)
     renderer = Redcarpet::Render::HTML.new
