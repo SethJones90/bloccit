@@ -52,4 +52,11 @@ class Post < ActiveRecord::Base
     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render markdown).html_safe
   end
+
+  def save_with_initial_vote 
+    ActiveRecord::Base.transaction do
+      save
+      create_vote   
+    end
+  end
 end
