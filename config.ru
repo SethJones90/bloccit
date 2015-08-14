@@ -10,14 +10,14 @@ run Rails.application
 #
 # Generated August 14, 2015
 # 
-# This configuration file is custom generated for The Atmosphere Music, Inc.
+# This configuration file is custom generated for app39062794@heroku.com
 #
 # For full documentation of agent configuration options, please refer to
 # https://docs.newrelic.com/docs/agents/ruby-agent/installation-configuration/ruby-agent-configuration
 
 common: &default_settings
   # Required license key associated with your New Relic account.
-  license_key: c034fac417a405dbcbbf253c1387f96937601dfe
+  license_key: b4d10e072b5db593e88eeec58ea506e2e87dfcf3
 
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
