@@ -22,8 +22,9 @@ gem 'will_paginate', '~> 3.0.5'
 
 gem 'newrelic_rpm'
 
-gem 'puma', group: :production
-gem 'puma', group: :development
+gem 'puma'
+
+gem 'factory_girl_rails', '~> 4.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
@@ -38,6 +39,7 @@ end
  group :development do
    gem 'sqlite3'
  end
+
 
  gem 'bootstrap-sass'
  
