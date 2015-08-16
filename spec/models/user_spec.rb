@@ -1,6 +1,29 @@
 require 'rails_helper'
+include TestFactories
+
 
 describe User do
+  before do
+    @user = create(:user)
+    @post = create(:post)
+  end
+
+  describe "#favorited(post)" do
+    before do
+      @post = associated_post
+      @user = authenticated_user
+    end
+
+    it "returns 'nil' if the user has not favorited the post" do
+      expect( @user.favorites.find_by_post_id(@post.id) ).to be nil
+    end
+
+    it "returns the appropriate favorite if it exists" do
+      favorite = @user.favorites.create!(post: @post)
+      expect( @user.favorites.find_by_post_id(@post.id) ).to eq(favorite)
+    end
+  end
+
   describe ".top_rated" do
 
     before do
@@ -28,21 +51,20 @@ describe User do
     end
   end
 
-  include TestFactories
+  describe "user_with_post_and_comment" do
 
-  describe "#favorited(post)" do
     before do
-      @post = associated_post
-      @user = authenticated_user
+      @user3 = create(:user_with_post_and_comment)
     end
 
-    it "returns 'nil' if the user has not favorited the post" do
-      expect( @user.favorites.find_by_post_id(@post.id) ).to be nil
+    it "stores a post on user" do
+        expect(@user3.posts.size).to eq(1)
     end
 
-    it "returns the appropriate favorite if it exists" do
-      favorite = @user.favorites.create!(post: @post)
-      expect( @user.favorites.find_by_post_id(@post.id) ).to eq(favorite)
+    it "stores a comment on user" do
+      expect(@user3.comments.size).to eq(1)
     end
   end
 end
+
+
