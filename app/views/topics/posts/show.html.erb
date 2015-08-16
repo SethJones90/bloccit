@@ -30,9 +30,9 @@
    </div>
    <%= render partial: 'favorites/favorite', locals: { post: @post} %>
 
-<div class="col-md-8">
+<div class="row">
   <h2>Comments</h2>
-  <div class='media-body'>
+  <div class='col-md-12'>
     <%= render partial: 'comments/comment', collection: @comments %>
     <% if policy(@comment).create? %> 
       <h4>Add a comment</h4>
