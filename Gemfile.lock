@@ -88,7 +88,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
-    faker (1.8.4)
+    faker (1.5.0)
       i18n (~> 0.5)
     ffi (1.9.18)
     figaro (1.0.0)
@@ -404,7 +404,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise (~> 3)
   factory_girl_rails (~> 4.0)
-  faker
+  faker (~> 1.5.0)
   figaro (= 1.0)
   fog
   jbuilder (~> 2.0)
