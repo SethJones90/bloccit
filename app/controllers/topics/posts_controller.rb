@@ -3,8 +3,7 @@ class Topics::PostsController < ApplicationController
   	@post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
     authorize @topic
-    @comment = Comment.find(params[:id])
-    authorize @comment
+    @comment = Comment.new
     @comments = @post.comments
   end
 
